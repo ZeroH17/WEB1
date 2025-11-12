@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  width: 90%;
+  max-width: 1000px;
+  display: flex;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.login-left {
+  flex: 1;
+  background: url('../images/fastfood-bg.jpg') center/cover no-repeat;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px;
+  text-align: center;
+  background-blend-mode: multiply;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.promo h2 {
+  background: #ffbe0b;
+  color: #111;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.promo h1 {
+  margin: 20px 0;
+  font-size: 36px;
+}
+
+.promo h1 span {
+  color: #ffbe0b;
+}
+
+
+
+.login-right {
+  flex: 1;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.login-card {
+  background: rgba(255,255,255,0.1);
+  padding: 40px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 320px;
+  backdrop-filter: blur(8px);
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.login-card .logo {
+  width: 90px;
+  margin-bottom: 15px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.input-group {
+  background: rgba(255,255,255,0.2);
+  margin-bottom: 15px;
+  border-radius: 30px;
+  padding: 5px 15px;
+}
+
+.input-group input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: #fff;
+  padding: 10px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  background: #1e1e1e;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: #ffbe0b;
+  color: #111;
+}
+

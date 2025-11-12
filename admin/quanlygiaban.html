@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quản lý Giá Bán & Lợi Nhuận</title>
+   <link rel="stylesheet" href="quanlygiaban.css" />
+</head>
+<body>
+  <header>
+    <a href="index_admin.html" class="back-btn">←</a>
+    Quản lý Giá Bán & Lợi Nhuận
+  </header>
+  
+  <div class="table-title">Tra cứu & Chỉnh sửa Tỉ lệ Lợi nhuận</div>
+  <div class="filter-controls">
+    <select id="categoryFilter">
+        <option value="">Lọc theo Loại sản phẩm</option>
+        </select>
+    
+    <select id="foodNameFilter">
+        <option value="">Lọc theo Tên món</option>
+        </select>
+    
+    <button onclick="applyFilters()">Áp dụng Bộ lọc</button>
+</div>
+
+
+  <div class="category-profit-panel">
+    <h3>Thiết lập Lợi nhuận theo Loại</h3>
+    <select id="categorySelect">
+        <option value="">-- Chọn Loại Sản phẩm --</option>
+        <option value="Gà rán">Gà rán</option>
+        <option value="Gà phô mai">Gà phô mai</option>
+        <option value="Pizza">Pizza</option>
+        <option value="Mì Ý">Mì Ý</option>
+    </select>
+    
+    <label for="batchProfitRate">Tỉ lệ áp dụng (%):</label>
+    <input type="number" id="batchProfitRate" min="0" max="100" step="1" value="0">
+    
+    <button onclick="applyBatchProfit()">Áp dụng cho toàn bộ Loại</button>
+    <p class="note">Ghi chú: Thao tác này sẽ ghi đè tỉ lệ lợi nhuận của tất cả món ăn trong loại được chọn.</p>
+</div>
+
+  <table id="tableCost">
+    <thead>
+      <tr>
+        <th>Tên món</th>
+        <th>Loại</th>
+        <th>Giá Vốn</th>
+        <th>% Lợi nhuận</th>
+        <th>Giá Bán Hiện Tại</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div class="modal" id="profitModal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3>Sửa Tỉ Lệ Lợi Nhuận</h3>
+      <p>Món: <span id="modalFoodName"></span></p>
+      <label for="newProfitRate">Tỉ lệ Lợi nhuận mới (%):</label>
+      <input type="number" id="newProfitRate" min="0" max="100" step="1">
+      <button onclick="saveProfitRate()">Lưu Thay Đổi</button>
+    </div>
+  </div>
+
+  <script src="quanlygiaban.js"></script>
+</body>
+</html>

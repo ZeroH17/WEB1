@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quản lý số lượng tồn sản phẩm</title>
+   <link rel="stylesheet" href="quanlysanpham.css" />
+</head>
+<body>
+  <header>
+    <a href="index_admin.html" class="back-btn">←</a>
+    Quản lý sản phẩm
+  </header>
+  <div class="filter-container">
+    <select id="category">...</select>
+    
+    <select id="foodNameTon">
+        <option value="">Chọn món ăn</option>
+        </select>
+    
+    <input type="date" id="specificDate" />
+    <button onclick="filterByDate()">Tra cứu theo ngày</button>
+</div>
+
+  <table id="tableTon">
+    <thead>
+      <tr>
+        <th>Tên món</th>
+        <th>Loại</th>
+        <th>Giá</th>
+        <th>Số lượng tồn</th>
+        <th>Trạng thái</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div class="filter-history">
+    <select id="foodSelect">
+      <option value="">Chọn món ăn</option>
+      <option>Gà rán truyền thống</option>
+      <option>Gà phô mai Hàn Quốc</option>
+      <option>Pizza phô mai</option>
+      <option>Pizza hải sản</option>
+      <option>Mì Ý sốt bò</option>
+      <option>Mì Ý kem tôm</option>
+    </select>
+    <label>Từ ngày</label>
+    <input type="date" id="fromDate">
+    <label>Đến ngày</label>
+    <input type="date" id="toDate">
+    <button onclick="filterByRange()">Tra cứu</button>
+  </div>
+
+  <table id="tableHistory">
+    <thead>
+      <tr>
+        <th>Tên món</th>
+        <th>Nhập</th>
+        <th>Xuất</th>
+        <th>Tồn</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="quanlysanpham.js">
+  </script>
+</body>
+</html>

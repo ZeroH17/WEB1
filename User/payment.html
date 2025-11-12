@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lựa chọn thanh toán</title>
+  <link rel="stylesheet" href="payment.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="back-btn" onclick="goBack()">
+    <i class="fa fa-backward"></i>
+  </div>
+  <div class="payment-container" id="main-container">
+    <h2>Lựa chọn phương thức thanh toán</h2>
+    <div class="option">
+      <input type="radio" name="method" id="vnpay">
+      <label for="vnpay">
+        Thanh toán qua VNPAY 
+        <img src="../image/vnpay.png" class="icon vnpay" alt="VNPAY" style="height:24px; vertical-align:middle;">
+
+      </label>
+    </div>
+
+    <div class="option">
+      <input type="radio" name="method" id="momo">
+      <label for="momo">
+        Thanh toán momo 
+        <img src="https://upload.wikimedia.org/wikipedia/vi/f/fe/MoMo_Logo.png" class="icon momo">
+      </label>
+    </div>
+
+    <div class="option">
+      <input type="radio" name="method" id="cash">
+      <label for="cash">Thanh toán tiền mặt</label>
+    </div>
+
+    <div class="buttons">
+      <button class="cancel" onclick="cancelPayment()">Hủy thanh toán</button>
+      <button class="confirm" onclick="confirmPayment()">Xác nhận thanh toán</button>
+    </div>
+  </div>
+
+  <!-- Popup QR -->
+  <div class="qr-popup" id="qr-popup">
+    <div class="qr-box">
+      <h3>Quét mã QR để thanh toán</h3>
+      <img id="qr-image" src="" alt="QR Code">
+      <div class="qr-buttons">
+        <button class="cancel" onclick="closeQR()">Hủy</button>
+        <button class="confirm" onclick="confirmReceived()">Đã nhận được tiền</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup Thanh Toán Thành Công -->
+  <div class="success-popup" id="success-popup">
+    <div class="success-box">
+      <img src="https://cdn-icons-png.flaticon.com/512/845/845646.png" alt="success" class="success-icon">
+      <h3>Đặt đơn thành công</h3>
+      
+      <div class="order-details" id="order-details">
+        </div>
+    </div>
+  </div>
+    
+  <!-- Phần hiển thị tiền mặt -->
+  <div id="cashSection" style="display:none; margin-top: 20px;">
+    <p><strong>Số tiền phải trả:</strong> <span id="totalAmount">0₫</span></p>
+    <label>Tiền khách đưa:</label>
+    <input type="number" id="customerCash" placeholder="Nhập số tiền khách đưa" style="width:100%;padding:8px;margin:8px 0;">
+    <p><strong>Tiền thối lại:</strong> <span id="changeAmount">0₫</span></p>
+    <div class="qr-buttons">
+      <button class="cancel" onclick="cancelPayment()">Hủy</button>
+      <button class="confirm" onclick="confirmCashPayment()">Đã thanh toán</button>
+    </div>
+  </div>
+  <script src="payment.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="info-user.css">
+  <title>FastFood_Wedsite</title>
+</head>
+<body>
+    <div id="header">
+        <div class="Home-logo">
+            <a href="/index.html"><img src="/image/Vector.svg" alt="Home"></a>
+        </div>
+    </div>
+    <div id="Content-left">
+        <div class="avatar"></div>
+        <a href="info-user.html">Quản lý tài khoản</a>
+        <a href="history-user.html">Lịch sử giao dịch</a>
+        <a href="#" id="logoutBtn">Đăng xuất</a>
+    </div>
+    <div id="Content-right">
+        <div class="field">
+    <input type="text" class="userid" placeholder="ID Khách" disabled>
+</div>
+
+    <div class="field">
+        <input type="text" class="first-name" placeholder="Họ">
+        <button class="edit-btn" data-target="first-name">Chỉnh sửa</button>
+    </div>
+
+    <div class="field">
+        <input type="text" class="last-name" placeholder="Tên">
+        <button class="edit-btn" data-target="last-name">Chỉnh sửa</button>
+    </div>
+
+    <div class="field">
+        <input type="email" class="email" placeholder="Email">
+        <button class="edit-btn" data-target="email">Chỉnh sửa</button>
+    </div>
+
+    <div class="field">
+        <input type="text" class="username" placeholder="Username">
+        <button class="edit-btn" data-target="username">Chỉnh sửa</button>
+    </div>
+
+    <div class="field">
+        <input type="password" class="password" placeholder="Password">
+        <button class="edit-btn" data-target="password">Chỉnh sửa</button>
+    </div>
+
+    <div class="field">
+        <input type="text" class="address" placeholder="Địa chỉ">
+        <button class="edit-btn" data-target="address">Chỉnh sửa</button>
+    </div>
+
+    <div class="btn-group">
+        <button class="btn-save">LƯU</button>
+        <button class="btn-save_exit">LƯU VÀ THOÁT</button>
+    </div>
+    </div>
+
+
+    <script src="Logout.js"></script>
+    <script src="ChangeBackground.js"></script>
+    <script src="UpdateUserInfo.js"></script>
+
+</body>
+</html>

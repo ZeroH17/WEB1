@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang Quản Trị</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(to bottom, #8e2de2, #ff9966);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .thanhdieuhuong {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(to right, #8e2de2, #ff3c3c);
+      padding: 10px 40px;
+      color: white;
+      width: 100%;
+    }
+
+    .logo {
+      background-color: white;
+      color: black;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .menu li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 15px;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      transition: 0.3s;
+      background: linear-gradient(to right, #ff9900, #ffcc00);
+      color: black;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    .admin {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      position: relative;
+    }
+
+    .admin span {
+      font-weight: bold;
+    }
+
+    .menu-icon {
+      font-size: 24px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background: rgba(0, 0, 0, 0.85);
+      border-radius: 10px;
+      padding: 10px 0;
+      min-width: 200px;
+      z-index: 100;
+    }
+
+    .dropdown a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      font-weight: bold;
+    }
+
+    .dropdown a:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .dropdown.show {
+      display: block;
+    }
+
+    .slogan {
+      margin-top: 20px;
+      width: 80%;
+      height: 250px;
+      background: black;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 2rem;
+      letter-spacing: 3px;
+    }
+
+    /* Vùng chứa hai hình ảnh */
+    .banner-container {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      margin-top: 30px;
+      gap: 20px;
+    }
+
+    .banner-item {
+      width: 100%;
+      height: 250px;
+      background: #000;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .banner-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="thanhdieuhuong">
+    <div class="logo">Logo</div>
+    <ul class="menu">
+      <li><a href="../User/index.html">Trang Chủ</a></li>
+      <li><a href="#">Thực Đơn</a></li>
+      <li><a href="#">Liên Hệ</a></li>
+      <li><a href="#">Giới Thiệu</a></li>
+    </ul>
+    <div class="admin">
+      <span>Admin</span>
+      <div class="menu-icon" id="menuBtn">☰</div>
+
+      <div class="dropdown" id="dropdownMenu">
+        <a href="#">Quản lý đơn hàng</a>
+        <a href="#">Thông tin khách hàng</a>
+        <a href="#">Lịch sử đơn hàng</a>
+        <a href="#">Đăng xuất</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="slogan">
+    <h1>BANNER QUẢNG CÁO</h1>
+  </section>
+
+  <!-- Hai hình ảnh thêm vào -->
+  <section class="banner-container">
+    <div class="banner-item">
+      <!-- gắn hình vào đây -->
+      <img src="../images/POSTER.png" alt="Hình 1">
+    </div>
+    <div class="banner-item">
+      <!-- gắn hình vào đây -->
+      <img src="../images/POSTER.png" alt="Hình 2">
+    </div>
+  </section>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const dropdownMenu = document.getElementById("dropdownMenu");
+
+    menuBtn.addEventListener("click", () => {
+      dropdownMenu.classList.toggle("show");
+    });
+
+    window.addEventListener("click", (e) => {
+      if (!menuBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        dropdownMenu.classList.remove("show");
+      }
+    });
+  </script>
+
+</body>
+</html>

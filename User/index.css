@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #7B4397 20%, #CBAD6D 92%);
+}
+
+.thanhdieuhuong {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  background: linear-gradient(to right, #7B4397 20%, #CBAD6D 92%);
+  color: white;
+}
+
+.logo img {
+  width: 70px;
+  height: auto;
+  object-fit: contain;
+}
+
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.menu li a:hover {
+  color: red;
+}
+
+.btn-group {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: black;
+  background: linear-gradient(to right, #ff9900, #ffcc00);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.slogan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  height: 5vh;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  background-color: red;
+  border-radius: 15px;
+  word-spacing: 20px;
+  text-shadow: 0 0 10px yellow;
+  letter-spacing: 3px;
+}
+
+.qc {
+  width: 100%;
+  height: 300px;
+  margin-top: 50px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.qc img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.container, .container1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.container {
+  height: 50vh;
+  margin-top: 150px;
+}
+
+.container1 {
+  height: 40vh;
+  margin: 10px;
+}
+
+.box {
+  width: 80%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  background-color: coral;
+}
+
+.box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s;
+  border-radius: 15px;
+}
+
+.box img.active {
+  opacity: 1;
+}
+
+.box1 {
+  width: 25%;
+  height: 100%;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.box1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  margin-top: 30px;
+  height: 15vh;
+  background: linear-gradient(to right, #8e2de2, #ff3c3c);
+}
+
+.footer ul {
+  list-style: none;
+}
+
+.footer ul li {
+  color: white;
+  font-weight: bold;
+}
+
+.sđt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  padding: 10px 50px;
+  border-radius: 20px;
+  background: linear-gradient(to right, orange, #8e2de2);
+}
+
+.logocongthuong {
+  width: 20%;
+}
+
+.logocongthuong img {
+  width: 100%;
+  height: 100%;
+}

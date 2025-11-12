@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="history-user.css">
+  <title>FastFood_Wedsite</title>
+</head>
+<body>
+    <div id="header">
+        <div class="Home-logo">
+            <a href="/index.html"><img src="../../image/Vector.svg" alt="Home"></a>
+        </div>
+    </div>
+    <div id="Content-left">
+        <div class="avatar"></div>
+        <a href="info-user.html">Quản lý tài khoản</a>
+        <a href="history-user.html">Lịch sử giao dịch</a>
+        <a href="#" id="logoutBtn">Đăng xuất</a>
+    </div>
+    <div id="Content-right">
+        <div class="box-history">
+            <div class="order-info">
+                <p><strong>ID đơn hàng: </strong></p>
+                <p><strong>Giá: </strong></p>
+                <p><strong>Thanh toán: </strong></p>
+                <p><strong>Trạng thái: </strong></p>
+            </div>
+            <div class="order-actions">
+                <button class="cancel-btn">Hủy đơn hàng</button>
+                <div class="rating-container">
+                    <label>Đánh giá:</label>
+                    <div class="rating">
+                        <img src="../../image/Star 22.svg" alt="star">
+                        <img src="../../image/Star 22.svg" alt="star">
+                        <img src="../../image/Star 22.svg" alt="star">
+                        <img src="../../image/Star 22.svg" alt="star">
+                        <img src="../../image/Star 22.svg" alt="star">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Popup chi tiết đơn hàng -->
+    <div id="orderDetailPopup" class="order-detail-popup">
+        <div class="order-detail-box">
+            <h3>Chi tiết đơn hàng</h3>
+            <div id="orderDetailContent"></div>
+            <button id="closeOrderDetail" class="close-detail-btn">Đóng</button>
+        </div>
+    </div>
+
+    <script src="Logout.js"></script>
+    <script src="ChangeBackground.js"></script>
+    <script src="OrderActions.js"></script>
+
+</body>
+</html>

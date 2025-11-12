@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thông tin khách hàng</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/thongtinkhachhang.css">
+
+  <style>
+    /* ✅ STYLE CHO Ô TÌM KIẾM */
+    .search-box {
+      width: 65%;
+      max-width: 480px;
+      padding: 12px 15px;
+      margin: 0 auto 25px auto;
+
+      display: block;
+      border-radius: 14px;
+
+      border: 2px solid rgba(255,255,255,0.18);
+      background: rgba(0,0,0,0.35);
+      color: white;
+
+      font-size: 15px;
+      outline: none;
+      transition: 0.25s;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    }
+
+    .search-box::placeholder {
+      color: #cccccc;
+    }
+
+    .search-box:focus {
+      border-color: #CBAD6D;
+      box-shadow: 0 0 10px rgba(203,173,109,0.8);
+      background: rgba(0,0,0,0.45);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="thanhdieuhuong">
+    <div class="logo-top">
+      <a href="index_admin.html">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home">
+      </a>
+    </div>
+  </div>
+
+  <div class="noidung">
+
+    <!-- ✅ MENU BÊN TRÁI -->
+    <div class="ben-trai">
+      <div class="avatar"></div>
+
+      <div class="menu">
+        <a href="quanlydonhang.html">Quản lý đơn hàng</a>
+        <a href="thongtinkhachhang.html">Thông tin khách hàng</a>
+        <a href="lichsudonhang.html">Lịch sử đơn hàng</a>
+        <a href="admin_login.html">Đăng xuất</a>
+      </div>
+    </div>
+
+    <!-- ✅ KHUNG DANH SÁCH + TÌM KIẾM -->
+    <div class="ben-phai">
+
+        <!-- ✅ Ô tìm kiếm -->
+        <input id="searchInput" class="search-box"
+          placeholder="🔍 Tìm theo tên, username, email, số điện thoại...">
+
+        <!-- ✅ Danh sách khách -->
+        <div class="rectangle-bg" id="bigRect"></div>
+
+    </div>
+  </div>
+
+  <div id="popups-container"></div>
+
+  <script src="js/thongtinkhachhang.js"></script>
+</body>
+</html>

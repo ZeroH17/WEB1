@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Nhà hàng</title>
+  <link rel="stylesheet" href="stylemenuadmin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div id="cartPanel" class="cart-panel">
+      <div class="cart-header">
+        <i class="fa fa-shopping-cart"></i>
+        <span>Giỏ hàng</span>
+      </div>
+    </div>
+
+    <!-- PANEL GIỎ HÀNG -->
+    <div id="cart-panel" class="cart-panel">
+      <div class="cart-header">
+        <i class="fa fa-shopping-cart"></i>
+        <span>Giỏ hàng</span>
+      </div>
+      <div class="cart-body">
+        <!-- Phần này để trống - sau sẽ hiển thị đơn hàng -->
+      </div>
+    </div>
+
+    <div class="logo">
+      <a href="../admin/index_admin.html" class="fa fa-home"></a>
+    </div>
+
+    <div class="search-bar">
+      <i class="fa fa-search"></i>
+      <input type="text" placeholder="Tìm món ăn...">
+    </div>
+
+    <div class="icons">
+      <!-- ==== BỘ LỌC MỚI (giống giao diện menu.html) ==== -->
+<div class="filter-container">
+  <i id="filterIcon" class="fa-solid fa-filter"></i>
+
+  <div id="filterBox" class="filter-box">
+    <div class="filter-tabs">
+      <button id="btnLoai" class="active">Loại</button>
+      <button id="btnGia">Giá</button>
+    </div>
+
+    <div id="filterLoai">
+      <button class="tag">Gà giòn</button>
+      <button class="tag">Gà phô mai</button>
+      <button class="tag">Pizza</button>
+      <button class="tag">Mì ý</button>
+    </div>
+
+    <div id="filterGia" class="hidden">
+      <input type="range" id="priceRange" min="30000" max="100000" value="100000">
+      <span>Giá tối đa: <span id="maxPrice">100.000</span>₫</span>
+    </div>
+  </div>
+</div>
+
+
+      <div class="bell">
+        <i class="fa fa-bell"></i>
+        <span class="badge">1</span>
+      </div>
+
+      <div class="admin-profile" onclick="toggleAdminMenu()">
+        <i class="fa fa-user-circle"></i>
+        <span>Admin</span>
+        <div id="admin-menu" class="admin-menu">
+          <div class="admin-item">
+            <i class="fa fa-shopping-cart"></i>
+            <span>Giỏ hàng</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="avatar"></div>
+    </div>
+  </header>
+
+  <!-- DANH MỤC -->
+  <section class="categories">
+  <button class="nav-btn left"><i class="fa fa-chevron-left"></i></button>
+  
+  <div class="category category-add" id="addCategoryBtn">
+    <i class="fa fa-plus"></i>
+  </div>
+  
+  <button class="nav-btn right"><i class="fa fa-chevron-right"></i></button>
+</section>
+  <!-- DANH SÁCH MÓN ĂN -->
+  <main class="menu">
+    <h2></h2>
+    
+    <hr>
+    <div class="menu-grid"></div>
+  </main>
+
+  <!-- FORM THÊM MÓN -->
+ <div class="modal" id="foodModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="foodModalTitle">Thêm món ăn</h3> <span id="closeFoodModal" class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div id="imgPreview" class="img-preview">
+          <i class="fa fa-plus"></i>
+        </div>
+        
+        <label for="foodCode">Mã sản phẩm</label>
+        <input type="text" id="foodCode" placeholder="Ví dụ: GA_RN_01">
+
+        <label for="foodName">Tên món</label>
+        <input type="text" id="foodName" placeholder="Nhập tên món...">
+        
+        <label for="foodDescription">Mô tả</label>
+        <textarea id="foodDescription" placeholder="Mô tả ngắn về món ăn..." rows="3"></textarea>
+        
+        <label for="foodPrice">Giá</label>
+        <input type="text" id="foodPrice" placeholder="Nhập giá...">
+        <button id="saveBtn" class="save-btn">Lưu</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="menu-admin.js"></script>
+  <!-- ================= GIỎ HÀNG ================= -->
+<div class="cart-overlay"></div>
+<div class="cart-panel">
+  <div class="cart-header">
+    <h2>Giỏ Hàng</h2>
+    <button class="close-cart">×</button>
+  </div>
+  <div class="cart-content">
+    <p>Chưa có sản phẩm nào trong giỏ hàng</p>
+  </div>
+  <div class="cart-footer">
+    <button class="checkout-btn">Thanh toán</button>
+  </div>
+</div>
+<div id="categoryModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 id="categoryModalTitle">Thêm Loại Sản phẩm</h3>
+      <span class="close" id="closeCategoryModal">&times;</span>
+    </div>
+    <div class="modal-body">
+      <label for="categoryNameInput">Tên Loại sản phẩm:</label>
+      <input type="text" id="categoryNameInput" placeholder="Ví dụ: Bánh ngọt">
+      <button id="saveCategoryBtn" class="save-btn">Lưu</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

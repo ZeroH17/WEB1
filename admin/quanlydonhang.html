@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quản lý đơn hàng (All-in-one)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ✅ LINK CSS TÁCH RIÊNG -->
+  <link rel="stylesheet" href="quanlydonhang.css">
+</head>
+<body>
+
+  <div class="thanhdieuhuong">
+    <div class="logo-top">
+      <a href="index_admin.html">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png">
+      </a>
+    </div>
+    <div class="header-title">Quản lý đơn hàng</div>
+  </div>
+
+  <div class="noidung">
+    <div class="ben-trai">
+      <div class="avatar"></div>
+      <div class="menu">
+        <a class="active" href="quanlydonhang.html">Quản lý đơn hàng</a>
+        <a href="thongtinkhachhang.html">Thông tin khách hàng</a>
+        <a href="lichsudonhang.html">Lịch sử đơn hàng</a>
+        <a href="admin_login.html">Đăng xuất</a>
+      </div>
+    </div>
+
+    <div class="ben-phai">
+      <div class="rectangle-bg"></div>
+
+      <div class="controls">
+        <div class="filter-row">
+          <div class="filter-item">
+            <label>Ngày từ</label>
+            <input type="date" id="filterFrom">
+          </div>
+          <div class="filter-item">
+            <label>Đến</label>
+            <input type="date" id="filterTo">
+          </div>
+          <div class="filter-item">
+            <label>Trạng thái</label>
+            <select id="filterStatus"></select>
+          </div>
+          <div class="filter-item actions">
+            <button id="applyFilter">Áp dụng</button>
+            <button id="resetFilter">Đặt lại</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="orders-container" id="ordersContainer"></div>
+    </div>
+  </div>
+
+  <!-- POPUP -->
+  <div id="popup">
+    <div class="popup-content">
+      <div class="bill-header">HÓA ĐƠN / CHI TIẾT ĐƠN</div>
+      <div class="bill-body" id="popup-info"></div>
+
+      <div class="popup-edit">
+        <label>Trạng thái</label>
+        <select id="popup-status-select"></select>
+      </div>
+
+      <div class="bill-total">
+        <span>Tổng tiền:</span>
+        <span id="bill-total"></span>
+      </div>
+
+      <div class="popup-actions">
+        <button id="savePopup">Lưu</button>
+        <button id="closePopup">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ LINK JS TÁCH RIÊNG -->
+  <script src="quanlydonhang.js"></script>
+</body>
+</html>

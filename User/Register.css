@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  font-size: 18px;
+}
+
+#Container {
+  width: 100vw;
+  height: 100vh;
+  display: inline-block;
+  background: linear-gradient(
+    to left,
+    #F56217 0%,
+    #C84E2F 25%,
+    #0B486B 40%
+  );
+}
+
+/* --- Cột Poster --- */
+#Poster {
+  margin-left: 10%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#Poster img {
+  margin-top: 15px;
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 1200px) {
+  #Poster img {
+    width: 35%;
+  }
+}
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+  #Poster img {
+    width: 35%;
+  }
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  #Poster img {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #Poster {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  #Poster img {
+    width: 90%;
+  }
+}
+
+/* --- Hộp đăng ký --- */
+#Register_box {
+  position: absolute;
+  top: 1%;
+  right: 7%;
+  width: 20%;
+  height: 98vh;
+  min-width: 380px;
+  background: linear-gradient(
+    to bottom,
+    rgba(59, 59, 88, 1) 0%,
+    rgba(26, 26, 46, 0.5) 50%,
+    rgba(15, 15, 15, 0.5) 100%
+  );
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+}
+
+/* --- Tiêu đề và logo --- */
+#Register_box h1 {
+  font-size: 30px;
+}
+
+#Register_box img {
+  width: 200px;
+  height: 200px;
+}
+
+/* --- Nhãn và ô nhập --- */
+label {
+  align-self: flex-start;
+  margin-left: 20%;
+  margin-top: 5px;
+  font-size: 16px;
+  color: #ccc;
+}
+
+.input_field,
+.input_field1,
+.input_field2 {
+  display: block;
+  width: 70%;
+  height: 45px;
+  margin-top: 5px;
+  padding-left: 45px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 30px;
+  background: rgba(59, 59, 88, 0.54);
+  color: white;
+  background-repeat: no-repeat;
+  background-size: 24px;
+  background-position: 15px center;
+}
+
+.input_field {
+  background-image: url('/image/user.svg');
+}
+.input_field1 {
+  background-image: url('/image/mail.svg');
+}
+.input_field2 {
+  background-image: url('/image/padlock.svg');
+}
+
+/* --- Nút đăng ký --- */
+.btn_register {
+  margin-top: 10px;
+  padding: 12px 40px;
+  background: linear-gradient(to right, #283048 1%, #859398 51%, #283048 100%);
+  background-size: 200% auto;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.btn_register:hover {
+  background-position: right center;
+}
+
+/* --- Dòng liên kết "Đăng nhập" --- */
+.new_account {
+  margin-top: 10px;
+  margin-left: 60px;
+  font-size: 14px;
+  color: white;
+  text-align: center;
+}
+
+#Register_box a { 
+  position: relative; 
+  background: linear-gradient(to right, #D1913C 32%, #FFD194 100%); 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+  font-weight: bold; 
+  text-decoration: none; 
+}
+
+#Register_box a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #D1913C 32%, #FFD194 100%);
+  border-radius: 1px;
+}

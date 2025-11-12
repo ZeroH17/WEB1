@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giao diện đặt món</title>
+  <link rel="stylesheet" href="menu.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="header">
+   <a href="/index.html" style="color: black;"> <i class="fa-solid fa-house" style="font-size: 30px;"></i></a>
+    <div class="search-container">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
+
+  <div class="filter-container">
+    <i id="filterIcon" class="fa-solid fa-filter"></i>
+    <div id="filterBox" class="filter-box">
+      <div class="filter-header">
+        <button id="btnLoai" class="active">Loại</button>
+        <button id="btnGia">Giá</button>
+      </div>
+
+      <div id="filterLoai" class="filter-content">
+        <button class="tag">Gà Rán</button>
+        <button class="tag">Gà Phô Mai</button>
+        <button class="tag">Mì Ý</button>
+        <button class="tag">PIZZA</button>
+      </div>
+
+      <div id="filterGia" class="filter-content hidden">
+        <input type="range" id="priceRange" min="30000" max="100000" value="100000">
+        <div class="price-labels">
+          <span>0</span>
+          <span id="maxPrice">100.000</span>₫
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div class="user">
+      <i class="fa-solid fa-bell" style="font-size: 30px;"></i>
+      <h4 id="userNameDisplay">User name</h4>
+      <a href="/User/Info-user/info-user.html" id="userAvatar" class="avatar"></a>
+    </div>
+
+
+  </div>
+
+  <div class="product">
+    <div class="production">
+      <div class="product-container">
+        <i class="fa-solid fa-chevron-left category-prev"></i>
+
+        <div class="list-product">Gà Rán</div>
+        <div class="list-product">Gà Phô Mai</div>
+        <div class="list-product">Mì Ý</div>
+        <div class="list-product">PIZZA</div>
+
+        <i class="fa-solid fa-chevron-right category-next"></i>
+      </div>
+
+
+      <hr style="border: 1px solid black; width: 100%; margin-top: 20px;">
+
+      <div class="production-container" id="productList"></div>
+      <div id="pageNumbers" class="page-numbers"></div>
+    </div>
+
+
+<div id="orderModal" class="order-modal">
+  <div class="order-box">
+    <div class="order-header">CHI TIẾT MÓN ĂN</div>
+
+    <div class="order-body">
+      <div class="order-left">
+        <img id="modalImg" src="" alt="Ảnh món" />
+      </div>
+
+      <div class="order-right">
+        <div class="info-line">
+          <span class="label">Tên món</span>
+          <span id="modalName" class="value"></span>
+        </div>
+
+        <div class="info-line">
+          <span class="label">Giá</span>
+          <span id="modalPrice" class="price"></span>
+        </div>
+
+        <div class="info-line">
+          <span class="label">Số lượng</span>
+          <div class="quantity-control">
+            <button id="minusQty">-</button>
+            <input id="modalQty" type="number" value="1" min="1" />
+            <button id="plusQty">+</button>
+          </div>
+        </div>
+
+        <div class="info-line">
+          <span class="label">Giá trị dinh dưỡng</span>
+          <span class="value">Đang cập nhật...</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="order-footer">
+      <button id="addToCart" class="confirm-btn">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span id="modalTotal">0 VND</span>
+      </button>
+    </div>
+
+    <span id="closeModal" class="close-btn">&times;</span>
+  </div>
+</div>
+
+<div class="cart-section" id="cartSection">
+  <div class="cart-header">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span>Giỏ Hàng</span>
+  </div>
+
+  <div class="cart-items" id="cartItems"></div>
+
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span class="total-label">Tổng cộng:</span>
+      <span id="cartTotalPrice">0₫</span>
+    </div>
+    <button id="checkoutBtn" class="checkout-btn">Thanh Toán</button>
+
+  </div>
+</div>
+
+
+  <script src="menu.js"></script>
+  <script src="menu-item.js"></script>
+
+</body>
+</html>

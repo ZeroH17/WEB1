@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lịch sử đơn hàng</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FILE CSS -->
+  <link rel="stylesheet" href="lichsudonhang.css">
+</head>
+
+<body>
+
+  <!-- ========= TOP BAR ========= -->
+  <div class="thanhdieuhuong">
+    <div class="logo-top"><a href="index_admin.html"><img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home"></a></div>
+    <div style="font-weight:700;color:#fff">LỊCH SỬ ĐƠN HÀNG</div>
+    <div></div>
+  </div>
+
+  <div class="noidung">
+    
+    <!-- ======== LEFT MENU ========= -->
+    <div class="ben-trai">
+      <div class="avatar"></div>
+      <div class="menu">
+        <a href="quanlydonhang.html">Quản lý đơn hàng</a>
+        <a href="thongtinkhachhang.html">Thông tin khách hàng</a>
+        <a href="lichsudonhang.html">Lịch sử đơn hàng</a>
+        <a href="admin_login.html">Đăng xuất</a>
+      </div>
+    </div>
+
+    <!-- ======== MAIN CONTENT ========= -->
+    <div class="ben-phai">
+      <div class="rectangle-bg"></div>
+
+      <div class="right-inner">
+
+        <!-- SEARCH + DATE FILTER -->
+        <div class="search-row">
+          <input id="searchInput" class="search-input" placeholder="Tìm theo mã đơn, mã khách, tên món..." style="flex:1;">
+          <input type="date" id="fromDate" class="search-input" style="max-width:160px;">
+          <input type="date" id="toDate" class="search-input" style="max-width:160px;">
+          <div id="searchCount" style="color:white;font-weight:600;">0 kết quả</div>
+        </div>
+
+        <!-- LIST -->
+        <div class="orders-list" id="ordersList"></div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========= POPUP ========== -->
+  <div id="popup">
+    <div class="popup-content">
+      <div class="bill-header">HÓA ĐƠN CHI TIẾT</div>
+      <div class="bill-body" id="billBody"></div>
+      <div class="bill-total"><span>Tổng tiền:</span><span id="billTotal"></span></div>
+      <button class="close-btn" id="closePopup">Đóng</button>
+    </div>
+  </div>
+
+  <!-- FILE JS -->
+  <script src="lichsudonhang.js"></script>
+
+</body>
+</html>

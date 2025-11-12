@@ -1,0 +1,363 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #7B4397, #CBA86D);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment-container {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255,255,255,0.5);
+  padding: 40px 60px;
+  border-radius: 20px;
+  text-align: left;
+  color: #000;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+.option input[type="radio"] {
+  margin-right: 10px;
+  accent-color: #ff4757;
+  transform: scale(1.2);
+}
+
+.icon {
+  height: 25px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  gap: 15px;
+}
+
+.cancel, .confirm {
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.cancel {
+  background: #ff3b3b;
+  color: white;
+}
+
+.confirm {
+  background: #28a745;
+  color: white;
+}
+
+.cancel:hover {
+  background: #e22f2f;
+}
+
+.confirm:hover {
+  background: #218838;
+}
+
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 40px;
+  cursor: pointer;
+  color: black;
+  transition: transform 0.2s;
+}
+
+.back-btn:hover {
+  transform: scale(1.1);
+}
+
+.qr-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.qr-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 350px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  animation: popupScale 0.3s ease;
+}
+
+.qr-box h3 {
+  margin-bottom: 15px;
+}
+
+.qr-box img {
+  width: 200px;
+  height: 200px;
+  margin: 10px 0;
+}
+
+.qr-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.success-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.4s ease;
+}
+
+
+.success-box {
+  background: rgba(255,255,255,0.8);
+  padding: 40px 60px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  animation: popupScale 0.4s ease;
+}
+
+.success-icon {
+  width: 100px;
+  margin-bottom: 15px;
+}
+
+.success-box h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #000;
+}
+
+@keyframes popupScale {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+#cash-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#cash-popup .qr-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  width: 340px;
+}
+
+#cash-popup input {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.success-popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.success-box {
+  background: white;
+  border-radius: 12px;
+  padding: 20px 30px;
+  text-align: center;
+  width: 400px;
+  max-width: 90%;
+}
+
+.success-icon {
+  width: 70px;
+  margin-bottom: 10px;
+}
+
+.order-details {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.order-details ul {
+  list-style: disc;
+  margin-left: 20px;
+  color: #333;
+}
+
+.order-details p, .order-details li {
+  font-size: 14px;
+  color: #333;
+}
+
+/* ===== POPUP CHỌN ĐỊA CHỈ GIAO HÀNG ===== */
+#success-popup {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+#success-popup .popup-content {
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  width: 420px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+}
+
+.success-icon {
+  font-size: 60px;
+  color: #28a745;
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.success-icon.hidden {
+  display: none;
+}
+
+#success-popup h3 {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+#order-details {
+  font-size: 15px;
+  color: #444;
+}
+
+#order-details h4 {
+  margin-top: 15px;
+  color: #222;
+}
+
+#order-details ul {
+  list-style-type: disc;
+  margin-left: 25px;
+  margin-bottom: 10px;
+}
+
+/* ===== KHUNG ĐỊA CHỈ ===== */
+.address-options {
+  margin-bottom: 15px;
+}
+
+.address-options label {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+#newAddressForm {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
+}
+
+#newAddressForm.active {
+  display: block;
+}
+
+#newAddressForm label {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#inputNewAddress {
+  width: 95%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* ===== NÚT BẤM ===== */
+.btn-blue, .btn-green, .btn-red {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  color: white;
+  transition: 0.2s ease;
+}
+
+.btn-blue { background-color: #007bff; }
+.btn-blue:hover { background-color: #0069d9; }
+
+.btn-green { background-color: #28a745; }
+.btn-green:hover { background-color: #218838; }
+
+.btn-red { background-color: #dc3545; }
+.btn-red:hover { background-color: #c82333; }
+
+.popup-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}

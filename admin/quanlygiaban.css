@@ -1,0 +1,237 @@
+
+body {
+    background: linear-gradient(to bottom, #7B4397 20%, #CBAD6D 92%);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 40px;
+}
+header {
+    width: 100%;
+    background: linear-gradient(to right, #7B4397 20%, #CBAD6D 92%);
+    text-align: center;
+    padding: 15px 0;
+    font-size: 22px;
+    font-weight: bold;
+    position: relative;
+}
+.back-btn {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    text-decoration: none;
+    color: black;
+    background: rgba(255,255,255,0.3);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.table-title {
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+}
+table {
+    width: 90%;
+    border-collapse: collapse;
+    background: rgba(255,255,255,0.1);
+    margin-top: 25px;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+th {
+    background: rgba(255,255,255,0.15);
+}
+
+
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none; 
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    width: 350px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    color: #333;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: zoomIn 0.3s ease;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: #7B4397;
+}
+
+.modal-content .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.modal-content .close-btn:hover {
+    color: #ff2e63;
+}
+
+.modal-content input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 5px;
+    color: #333;
+    background: #f9f9f9;
+}
+
+.modal-content button {
+    background: #7B4397;
+    color: white;
+    padding: 10px;
+    border: none; 
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-content button:hover {
+    background: #9a65b8;
+}
+
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+.category-profit-panel {
+    width: 90%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.category-profit-panel h3 {
+    color: #fff;
+    margin-top: 0;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 8px;
+}
+
+ .filter-controls {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        width: 90%;
+        margin-top: 15px;
+    }
+   /* TÁCH STYLE CHO SELECT VÀ BUTTON */
+.filter-controls select, 
+.filter-controls button {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* Style riêng cho SELECT (Đảm bảo nền trắng và chữ đen khi xổ xuống) */
+.filter-controls select {
+    background: white; 
+    color: #333;      
+    width: 180px; /* Thêm độ rộng để hiển thị tốt hơn */
+}
+/* Style cho button */
+.filter-controls button {
+    background: #DC2430; 
+    color: white;
+}
+/* Áp dụng style chung cho select, input trong panel hàng loạt */
+.category-profit-panel input[type="number"] {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+/* SỬA RIÊNG CHO SELECT: Loại bỏ background trong suốt và đặt nền trắng */
+/* Điều này giúp phần xổ xuống không bị lỗi trắng nền */
+.category-profit-panel select {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    /* CHỈNH SỬA: Đặt nền trắng, chữ đen để phần xổ ra không bị lỗi */
+    background: white; 
+    color: #333; 
+    font-size: 16px;
+    margin-right: 10px;
+    
+    /* Đảm bảo style vẫn đẹp khi select chưa được xổ ra */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.category-profit-panel input[type="number"] {
+    width: 150px;
+    text-align: center;
+}
+
+.category-profit-panel button {
+    background: #007bff; 
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.category-profit-panel button:hover {
+    background: #0056b3;
+}
+.category-profit-panel .note {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-top: 5px;
+}

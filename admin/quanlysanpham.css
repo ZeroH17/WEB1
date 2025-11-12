@@ -1,0 +1,91 @@
+ body {
+      background: linear-gradient(
+        to bottom,
+        #7B4397 20%,
+        #CBAD6D 92%
+      );
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 40px;
+    }
+    header {
+      width: 100%;
+      background: linear-gradient(
+        to right,
+        #7B4397 20%,
+        #CBAD6D 92%
+      );
+      text-align: center;
+      padding: 15px 0;
+      font-size: 22px;
+      font-weight: bold;
+      position: relative;
+    }
+    .back-btn {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 28px;
+      text-decoration: none;
+      color: black;
+      background: rgba(255,255,255,0.3);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .filter-container, .filter-history {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    select, input[type="date"], button {
+      padding: 8px 15px;
+      border: none;
+      border-radius: 20px;
+      background: rgba(0,0,0,0.3);
+      color: white;
+      outline: none;
+    }
+    button {
+      background: #ff2e63;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #ff5f7e;
+    }
+    table {
+      width: 90%;
+      border-collapse: collapse;
+      background: rgba(255,255,255,0.1);
+      margin-top: 25px;
+      border-radius: 15px;
+      overflow: hidden;
+      text-align: center;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    th {
+      background: rgba(255,255,255,0.15);
+    }
+    .alert {
+      background: #ff3b3b;
+      padding: 5px 10px;
+      border-radius: 8px;
+    }
+    .ok {
+      background: #4CAF50;
+    }
